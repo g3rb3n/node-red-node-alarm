@@ -7,8 +7,6 @@ module.exports = function(RED) {
     node.pass = config.pass === 'true';
     node.on('input', function(msg) {
       try {
-        node.log(JSON.stringify(node))
-        node.log(JSON.stringify(config))
         let pass = msg.payload === node.pass;
         node.status({
           fill: msg.pass ? 'green' : 'red',
