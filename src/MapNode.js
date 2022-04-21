@@ -4,12 +4,11 @@ module.exports = function(RED) {
   function MapNode(config) {
     RED.nodes.createNode(this, config);
     var node = this;
-    node.part = config.part;
+    var context = node.context();
     node.on('input', function(msg) {
       try {
         let key = 'map';
         let storage = 'file';
-        var context = node.context();
         let map = context.get(key, storage) || {};
         if (msg.map) {
             if (msg.map.delete) delete map[msg.topic];
@@ -22,6 +21,7 @@ module.exports = function(RED) {
         }
         context.set(key, map, storage);
         let newMsg = {
+          map: {data:map},
           payload: map,
           topic: 'map',
         };
