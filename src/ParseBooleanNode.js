@@ -8,7 +8,7 @@ module.exports = function(RED) {
       try {
         if (msg.payload.equals(config.true)) msg.payload = true;
         else if (msg.payload.equals(config.false)) msg.payload = false;
-        throw Error(`Can not handle payload ${msg.payload}`);
+        else throw Error(`Can not handle payload ${msg.payload}`);
       }
       catch (err) {
         node.error(err);

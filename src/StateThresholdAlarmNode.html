@@ -3,9 +3,9 @@
     category: 'alarm',
     paletteLabel: 'state watch',
     color: '#a6bbcf',
-    icon: 'function.svg',
+    icon: 'alarm.svg',
     inputs:1,
-    outputs:2,
+    outputs:1,
     label: function() {
       return this.name || ['max', this.payload, 'for', this.thresholdSeconds + 's'].join(' ');
     },

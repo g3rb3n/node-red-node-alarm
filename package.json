@@ -4,6 +4,9 @@
   "node-red": {
     "nodes": {
       "AlarmTextNode": "src/AlarmTextNode.js",
+      "BooleanFilterNode": "src/BooleanFilterNode.js",
+      "BooleanInvertNode": "src/BooleanInvertNode.js",
+      "BooleanToValueNode": "src/BooleanToValueNode.js",
       "ExtractDeviceNode": "src/ExtractDeviceNode.js",
       "ExtractValueNode": "src/ExtractValueNode.js",
       "MapDisableNode": "src/MapDisableNode.js",

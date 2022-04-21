@@ -1,13 +1,13 @@
 <script type='text/javascript'>
-  RED.nodes.registerType('ParseBooleanNode',{
+  RED.nodes.registerType('BooleanToValueNode',{
     category: 'bool',
-    paletteLabel: 'parse',
+    paletteLabel: 'output',
     color: '#a6bbcf',
     icon: 'bool.svg',
     inputs:1,
     outputs:1,
     label: function() {
-      return this.name || 'parse ' + this.true + '/' + this.false;
+      return this.name || 'output ' + this.true + '/' + this.false;
     },
     defaults: {
       name: {value:''},
@@ -21,7 +21,7 @@
   });
 </script>
 
-<script type='text/html' data-template-name='ParseBooleanNode'>
+<script type='text/html' data-template-name='BooleanToValueNode'>
   <div class='form-row'>
     <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
     <input type='text' id='node-input-name' placeholder='Name'>
@@ -40,6 +40,6 @@
   </div>
 </script>
 
-<script type='text/html' data-help-name='ParseBooleanNode'>
-  <p>A node that parses the payload and sets the value and unit properties.</p>
+<script type='text/html' data-help-name='BooleanToValueNode'>
+  <p>A node that outputs a string value.</p>
 </script>

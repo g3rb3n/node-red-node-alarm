@@ -25,7 +25,7 @@ module.exports = function(RED) {
           node.status({fill:'green',shape:'dot',text:'OK ' + msg.payload + ' is not ' + node.payload});
           if (previousPayload !== msg.payload) {
             context.set('previousPayload', msg.payload);
-            node.send([null, msg]);
+            node.send(msg);
           }
           return;
         }
@@ -36,7 +36,7 @@ module.exports = function(RED) {
           node.status({fill:'red',shape:'dot',text:`ALARM ${msg.payload} for ${Math.round(seconds)} s`});
           if (previousPayload !== msg.payload) {
             context.set('previousPayload', msg.payload);
-            node.send([msg, null]);
+            node.send(msg);
           }
           return;
         }
