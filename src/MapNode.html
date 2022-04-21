@@ -1,0 +1,27 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('MapNode',{
+    category: 'alarm',
+    paletteLabel: 'map',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'map';
+    },
+    defaults: {
+      name: {value: ''},
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='MapNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='MapNode'>
+  <p>A node that collects messages in a map with topics as keys.</p>
+</script>

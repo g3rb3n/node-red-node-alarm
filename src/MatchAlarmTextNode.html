@@ -1,0 +1,44 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('MatchAlarmTextNode',{
+    category: 'alarm',
+    paletteLabel: 'match',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'match ' + this.match;
+    },
+    defaults: {
+      name: {value: ''},
+      match: {
+        value: 0,
+      },
+      comparison: {
+        value: '==',
+      },
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='MatchAlarmTextNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-value'><i class='fa fa-tag'></i> Value</label>
+    <input type='text' id='node-input-value' placeholder='0'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-comparison'><i class='fa fa-tag'></i> Comparison</label>
+    <select type='text' id='node-input-comparison'>
+      <option value='=='>Equals</option>
+      <option value='!='>Not equals</option>
+    </select>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='MatchAlarmTextNode'>
+  <p>A node that set the alarm state when the value matches.</p>
+</script>

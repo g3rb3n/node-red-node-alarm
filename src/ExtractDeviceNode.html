@@ -1,0 +1,34 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('ExtractDeviceNode',{
+    category: 'alarm',
+    paletteLabel: 'device',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'device ' + this.parts;
+    },
+    defaults: {
+      name: {value: ''},
+      parts: {
+        value: "1",
+      },
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='ExtractDeviceNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-parts'><i class='fa fa-tag'></i> Parts</label>
+    <input type='text' id='node-input-parts' placeholder='Parts'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='ExtractDeviceNode'>
+  <p>A node that extracts 1 level of a mqtt topic and sets the device property.</p>
+</script>

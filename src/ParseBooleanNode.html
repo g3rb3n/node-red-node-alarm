@@ -1,0 +1,45 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('ParseBooleanNode',{
+    category: 'alarm',
+    paletteLabel: 'parse bool',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'parse ' + this.true + '/' + this.false;
+    },
+    defaults: {
+      name: {value:''},
+      true: {
+        value:'on',
+      },
+      false: {
+        value:'off',
+      },
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='ParseBooleanNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-property'><i class='fa fa-tag'></i> Property</label>
+    <input type='text' id='node-input-property' placeholder='Property'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-true'><i class='fa fa-tag'></i> True</label>
+    <input type='text' id='node-input-true' placeholder='on'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-false'><i class='fa fa-tag'></i> False</label>
+    <input type='text' id='node-input-false' placeholder='off'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='ParseBooleanNode'>
+  <p>A node that parses the payload and sets the value and unit properties.</p>
+</script>

@@ -1,0 +1,41 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('ExtractValueNode',{
+    category: 'alarm',
+    paletteLabel: 'value',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'value ' + this.property + ' ' + this.unit;
+    },
+    defaults: {
+      name: {value:''},
+      property: {
+        value:null,
+      },
+      unit: {
+        value:'',
+      },
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='ExtractValueNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-property'><i class='fa fa-tag'></i> Property</label>
+    <input type='text' id='node-input-property' placeholder='Property'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-unit'><i class='fa fa-tag'></i> Unit</label>
+    <input type='text' id='node-input-unit' placeholder='Unit'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='ExtractValueNode'>
+  <p>A node that parses the payload and sets the value and unit properties.</p>
+</script>

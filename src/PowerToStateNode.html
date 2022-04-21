@@ -1,0 +1,36 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('PowerToStateNode',{
+    category: 'alarm',
+    paletteLabel: 'power state',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name||'power state';
+    },
+    defaults: {
+      name: {
+        value: '',
+      },
+      threshold: {
+        value: 0,
+      }
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='PowerToStateNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-threshold'><i class='fa fa-tag'></i> Threshold</label>
+    <input type='text' id='node-input-threshold' placeholder='Threshold'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='PowerToStateNode'>
+  <p>A node that detects state by power consumption.</p>
+</script>

@@ -1,0 +1,50 @@
+{
+  "name": "node-red-node-alarm",
+  "version": "0.0.1",
+  "node-red": {
+    "nodes": {
+      "AlarmTextNode": "src/AlarmTextNode.js",
+      "ExtractDeviceNode": "src/ExtractDeviceNode.js",
+      "ExtractValueNode": "src/ExtractValueNode.js",
+      "MapNode": "src/MapNode.js",
+      "MatchAlarmTextNode": "src/MatchAlarmTextNode.js",
+      "ParseBooleanNode": "src/ParseBooleanNode.js",
+      "PowerToStateNode": "src/PowerToStateNode.js",
+      "StateThresholdAlarmNode": "src/StateThresholdAlarmNode.js",
+      "ThresholdAlarmTextNode": "src/ThresholdAlarmTextNode.js"
+    }
+  },
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g3rb3n/node-red-node-alarm/"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "node-red": "^2.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "test": "eslint src/*.js",
+    "lint": "eslint src/*.js"
+  },
+  "readme": "README.md",
+  "author": {
+    "name" : "Gerben",
+    "email" : "info@gerbenvaneerten.nl",
+    "url" : "https://gerbenvaneerten.nl/"
+  },
+  "homepage": "https://github.com/g3rb3n/node-red-node-alarm#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g3rb3n/node-red-node-alarm/"
+  },
+  "bugs": {
+    "url" : "https://github.com/g3rb3n/node-red-node-alarm/issues",
+    "email" : "info@gerbenvaneerten.nl"
+  }}

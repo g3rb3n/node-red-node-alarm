@@ -1,0 +1,27 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('AlarmTextNode',{
+    category: 'alarm',
+    paletteLabel: 'text',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || 'alarm text';
+    },
+    defaults: {
+      name: {value: ''},
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='AlarmTextNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='AlarmTextNode'>
+  <p>A node that set the payload based on the alarm state.</p>
+</script>

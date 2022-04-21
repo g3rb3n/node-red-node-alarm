@@ -1,0 +1,47 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('StateThresholdAlarmNode',{
+    category: 'alarm',
+    paletteLabel: 'state watch',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:2,
+    label: function() {
+      return this.name || ['max', this.payload, 'for', this.thresholdSeconds + 's'].join(' ');
+    },
+    defaults: {
+      name: {
+        value:''
+      },
+      thresholdSeconds: {
+        value:60,
+        validate:RED.validators.number()
+      },
+      payload: {
+        value:'true',
+      },
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='StateThresholdAlarmNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-thresholdSeconds'><i class='fa fa-tag'></i> Threshold seconds</label>
+    <input type='text' id='node-input-thresholdSeconds' placeholder='Seconds'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-payload'><i class='fa fa-tag'></i> Payload</label>
+    <select type='text' id='node-input-payload'>
+      <option value='true'>true</option>
+      <option value='false'>false</option>
+    </select>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='StateThresholdAlarmNode'>
+  <p>A node for automatically switching on / off devices when they are off / on too long.</p>
+</script>

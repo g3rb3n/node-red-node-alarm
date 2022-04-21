@@ -1,0 +1,46 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('ThresholdAlarmTextNode',{
+    category: 'alarm',
+    paletteLabel: 'threshold',
+    color: '#a6bbcf',
+    icon: 'function.svg',
+    inputs:1,
+    outputs:1,
+    label: function() {
+      return this.name || ['threshold', this.comparison, this.threshold].join(' ');
+    },
+    defaults: {
+      name: {value: ''},
+      threshold: {
+        value: 0,
+      },
+      comparison: {
+        value: '>'
+      }
+    },
+  });
+</script>
+
+<script type='text/html' data-template-name='ThresholdAlarmTextNode'>
+  <div class='form-row'>
+    <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+    <input type='text' id='node-input-name' placeholder='Name'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-threshold'><i class='fa fa-tag'></i> Threshold</label>
+    <input type='text' id='node-input-threshold' placeholder='0'>
+  </div>
+  <div class='form-row'>
+    <label for='node-input-comparison'><i class='fa fa-tag'></i> Comparison</label>
+    <select type='text' id='node-input-comparison'>
+      <option value='>'>Greater than</option>
+      <option value='<'>Smaller than</option>
+      <option value='>='>Greater than or equals</option>
+      <option value='<='>Smaller than or equals</option>
+    </select>
+  </div>
+</script>
+
+<script type='text/html' data-help-name='ThresholdAlarmTextNode'>
+  <p>A node that set the alarm state when a threshold is reached.</p>
+</script>
