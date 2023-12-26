@@ -1,16 +1,18 @@
 <script type='text/javascript'>
   RED.nodes.registerType('BooleanToValueNode',{
-    category: 'bool',
+    category: 'alarm',
     paletteLabel: 'output',
     color: '#a6bbcf',
     icon: 'bool.svg',
     inputs:1,
     outputs:1,
     label: function() {
-      return this.name || 'output ' + this.true + '/' + this.false;
+      return this.name || [this.true, '/', this.false].join('/');
     },
     defaults: {
-      name: {value:''},
+      name: {
+        value:''
+      },
       true: {
         value:'on',
       },

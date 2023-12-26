@@ -15,7 +15,7 @@ module.exports = function(RED) {
           status = alarm.state ? 'ALARM' : 'OK';
           comparison = alarm.state ? 'matches' : 'does not match';
         }
-        if (config.comparison == '==') {
+        if (config.comparison == '!=') {
           alarm.state = alarm.value != config.match;
           status = alarm.state ? 'ALARM' : 'OK';
           comparison = alarm.state ? 'does not match' : 'matches';

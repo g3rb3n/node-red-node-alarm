@@ -10,23 +10,23 @@ module.exports = function(RED) {
         let alarm = msg.alarm;
         alarm.threshold = config.threshold;
         if (config.comparison == '<') {
-          alarm.comparisonAlarm = 'above';
-          alarm.comparisonOk = 'not below';
+          alarm.comparisonAlarm = 'below';
+          alarm.comparisonOk = 'above or equal to';
           alarm.state = alarm.value < alarm.threshold;
         }
         if (config.comparison == '<=') {
-          alarm.comparisonAlarm = 'above or equals';
-          alarm.comparisonOk = 'not below or equals';
+          alarm.comparisonAlarm = 'below or equals';
+          alarm.comparisonOk = 'above';
           alarm.state = alarm.value <= alarm.threshold;
         }
         if (config.comparison == '>') {
-          alarm.comparisonAlarm = 'below';
-          alarm.comparisonOk = 'not above';
+          alarm.comparisonAlarm = 'above';
+          alarm.comparisonOk = 'below or equal to';
           alarm.state = alarm.value > alarm.threshold;
         }
         if (config.comparison == '>=') {
-          alarm.comparisonAlarm = 'below or equals';
-          alarm.comparisonOk = 'not above or equals';
+          alarm.comparisonAlarm = 'above or equals';
+          alarm.comparisonOk = 'below';
           alarm.state = alarm.value >= alarm.threshold;
         }
         alarm.status = alarm.state ? 'ALARM' : 'OK';

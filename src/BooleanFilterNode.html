@@ -1,13 +1,13 @@
 <script type='text/javascript'>
   RED.nodes.registerType('BooleanFilterNode',{
-    category: 'bool',
+    category: 'alarm',
     paletteLabel: 'filter',
     color: '#a6bbcf',
     icon: 'bool.svg',
     inputs:1,
     outputs:1,
     label: function() {
-      return this.name || 'bool filter';
+      return this.name || ['pass', this.pass].join(' ');
     },
     defaults: {
       name: {

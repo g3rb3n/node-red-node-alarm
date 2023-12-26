@@ -1,6 +1,6 @@
 {
   "name": "@g3rb3n/node-red-node-alarm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "node-red": {
     "nodes": {
       "AlarmTextNode": "src/AlarmTextNode.js",
